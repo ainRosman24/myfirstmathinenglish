@@ -1,0 +1,163 @@
+body {
+  background-color: #fff;
+}
+
+.main-header {
+  padding: 1rem 0;
+  font-size: 1rem;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+}
+
+.main-header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-header ul > li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.main-footer {
+  padding: 1rem 0;
+  font-size: 1rem;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+}
+
+.welcome-page,
+.score-page {
+  height: 83vh !important;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0f7fa 0%, #fffde7 100%);
+}
+
+.welcome-page input[type='text'] {
+  width: 60%;
+  max-width: 300px;
+  margin: auto;
+}
+
+.welcome-page .card,
+.score-page .card {
+  max-width: 50%;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background: #ffffffcc;
+}
+
+.question-container,
+.score-page {
+  margin: 20px auto;
+}
+
+.full-width-page {
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.mint-theme {
+  padding: 2rem 0;
+}
+.mint-title {
+  color: #2eccb6;
+  font-family: 'Comic Sans MS', cursive;
+  text-shadow: 1px 2px 0 #b2f7ef;
+}
+.mint-subtitle {
+  color: #16897a;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.mint-card {
+  border: 2px solid #2eccb6;
+  border-radius: 1rem;
+  background: #f6fffa;
+  box-shadow: 0 2px 8px rgba(46, 204, 182, 0.08);
+}
+.mint-question {
+  color: #16897a;
+  font-size: 16px;
+}
+.mint-btn {
+  background: #e0fff4;
+  color: #16897a;
+  border: 1px solid #2eccb6;
+  margin-bottom: 0.5rem;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.mint-btn:hover {
+  background: #b2f7ef;
+  color: #16897a;
+}
+.mint-btn-selected {
+  background: #2eccb6;
+  color: #fff;
+  border: 1px solid #16897a;
+  margin-bottom: 0.5rem;
+}
+.mint-action {
+  background: #2eccb6;
+  color: #fff;
+  border: none;
+}
+.mint-action:hover {
+  background: #16897a;
+  color: #fff;
+}
+.mint-reset {
+  background: #e0fff4;
+  color: #16897a;
+  border: 1px solid #2eccb6;
+}
+.mint-reset:hover {
+  background: #b2f7ef;
+  color: #16897a;
+}
+.mint-modal {
+  border-radius: 1rem;
+  border: 2px solid #2eccb6;
+}
+
+#app {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    padding: 0;
+  }
+}
