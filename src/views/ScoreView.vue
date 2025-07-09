@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div class="score-page text-center mint-theme full-width-page">
     <div class="card text-center">

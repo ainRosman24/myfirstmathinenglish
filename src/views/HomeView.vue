@@ -33,7 +33,6 @@ import { useUserStore } from '../stores/user'
 
 export default {
   setup() {
-    // Do not return userStore to the template, so it's not accessible in the template
     useUserStore()
     return {}
   },
