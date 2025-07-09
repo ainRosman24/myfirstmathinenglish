@@ -38,8 +38,7 @@ body {
 }
 
 .welcome-page input[type='text'] {
-  width: 60%;
-  min-width: 300px;
+  width: 100%;
   margin: auto;
   text-align: center;
 }
@@ -72,7 +71,7 @@ body {
 }
 .mint-title {
   color: #2eccb6;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS';
   text-shadow: 1px 2px 0 #b2f7ef;
 }
 .mint-subtitle {
@@ -160,5 +159,24 @@ a,
 
   #app {
     padding: 0;
+  }
+
+  .welcome-page input[type='text'] {
+    width: 100%;
+    min-width: 300px;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .welcome-page input[type='text'] {
+    width: 50%;
+    min-width: 300px;
+  }
+
+  .welcome-page .card,
+  .score-page .card {
+    max-width: 50%;
   }
 }
