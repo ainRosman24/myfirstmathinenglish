@@ -51,7 +51,7 @@ export default {
       const userStore = useUserStore()
       if (this.isUsernameInserted()) {
         userStore.setUsername(this.username)
-        this.$router.push('/question')
+        this.$router.push('/question2')
       } else {
         alert('Please enter your name to start the quiz.')
       }

@@ -28,7 +28,8 @@ body {
 }
 
 .welcome-page,
-.score-page {
+.score-page,
+.math-question {
   height: 83vh !important;
   overflow: hidden;
   display: flex;
