@@ -22,7 +22,7 @@
             style="border-radius: 10px; padding: 12px; font-size: 1.1rem"
           />
         </div>
-        <button type="submit" class="btn mint-actionnpm">Start Quiz</button>
+        <button type="submit" class="btn mint-action">Start Quiz</button>
       </form>
     </div>
   </div>
