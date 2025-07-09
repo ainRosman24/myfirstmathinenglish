@@ -22,20 +22,7 @@
             style="border-radius: 10px; padding: 12px; font-size: 1.1rem"
           />
         </div>
-        <button
-          type="submit"
-          class="btn mint-action btn-sm w-100"
-          style="
-            background: #009688;
-            color: #fff;
-            font-weight: 600;
-            border-radius: 10px;
-            padding: 5px 0;
-            font-size: 0.9rem;
-          "
-        >
-          Start Quiz
-        </button>
+        <button type="submit" class="btn mint-actionnpm">Start Quiz</button>
       </form>
     </div>
   </div>

@@ -69,7 +69,12 @@
                     >
                       Congratulations! <br />{{ resultMessage }}
                     </template>
-                    <template v-else> Try again! <br />{{ resultMessage }} </template>
+                    <template
+                      v-else-if="resultMessage && parseInt(resultMessage.match(/\d+/)?.[0]) < 6"
+                    >
+                      Try again! <br />{{ resultMessage }}
+                    </template>
+                    <template v-else> Opps! <br />{{ resultMessage }} </template>
                   </strong>
                 </div>
                 <div class="modal-footer">
@@ -177,6 +182,13 @@ export default {
       this.questions[qIdx].selected = option
     },
     checkAnswer() {
+      // Check if any question is unanswered
+      const unanswered = this.questions.some((q) => q.selected === null)
+      if (unanswered) {
+        this.resultMessage = 'Please answer all questions before submitting.'
+        return
+      }
+
       let correctCount = 0
       this.questions.forEach((q) => {
         if (q.selected === q.correct) correctCount++
