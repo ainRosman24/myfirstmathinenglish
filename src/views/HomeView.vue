@@ -1,6 +1,6 @@
 <template>
   <div
-    class="welcome-page text-center mint-theme full-width-page d-flex align-items-center justify-content-center"
+    class="welcome-page text-center mint-theme full-width-page align-items-center justify-content-center"
   >
     <div class="card text-center shadow-lg p-4">
       <h2 class="mb-3 mint-title" style="font-weight: bold; color: #009688">
