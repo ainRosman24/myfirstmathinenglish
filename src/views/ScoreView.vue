@@ -3,8 +3,8 @@
 <template>
   <div class="score-page text-center mint-theme full-width-page">
     <div class="card text-center">
-      <h2 class="mb-3 mint-title">Top 10 Scores</h2>
-      <h5 class="mb-4 mint-subtitle">
+      <h2 class="mb-3 mint-title" style="font-weight: bold; color: #009688">Top 10 Scores</h2>
+      <h5 class="mb-4 mint-subtitle" style="color: #607d8b">
         Here are the top 10 scores from the quiz. <br />
         Congratulations to all the participants!
       </h5>
