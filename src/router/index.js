@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import BaseLayout from '@/layouts/BaseLayout.vue'
-import QuestionView from '@/views/QuestionView.vue'
-import QuestionView2 from '@/views/QuestionView2.vue'
+import QuestionView from '@/views/QuestionView2.vue'
 import HomeView from '@/views/HomeView.vue'
 import ScoreView from '@/views/ScoreView.vue'
 
@@ -10,16 +9,10 @@ const routes = [
     path: '/',
     component: BaseLayout,
     children: [
-      /*{
+      {
         path: 'question',
         name: 'Questions',
         component: QuestionView,
-      },*/
-
-      {
-        path: 'question2',
-        name: 'Questions2',
-        component: QuestionView2,
       },
 
       {

@@ -8,35 +8,38 @@
         Please select the correct answer for each question below.
       </h4>
 
-      <div
-        class="card h-100 mint-card"
-        style="background: linear-gradient(135deg, #e0f7fa 0%, #fffde7 100%)"
-      >
-        <div class="card-body">
-          <h5 class="card-title mint-question text-center">
-            Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}
-          </h5>
-          <div class="mb-3 text-center">{{ questions[currentQuestionIndex].text }}</div>
-          <div class="btn-group-vertical w-100">
-            <button
-              v-for="option in questions[currentQuestionIndex].options"
-              :key="option"
-              class="btn btn-outline-primary mb-2 d-flex align-items-center justify-content-center"
-              :class="{
-                active: questions[currentQuestionIndex].selected === option,
-              }"
-              @click="selectOption(currentQuestionIndex, option)"
-            >
-              <i
-                v-if="questions[currentQuestionIndex].selected === option"
-                class="bi bi-check-circle-fill me-2 text-success"
-              ></i>
-              <i v-else class="bi bi-circle me-2"></i>
-              {{ option }}
-            </button>
+      <transition name="slide-fade" mode="out-in">
+        <div
+          class="card h-100 mint-card"
+          style="background: linear-gradient(135deg, #e0f7fa 0%, #fffde7 100%)"
+          :key="currentQuestionIndex"
+        >
+          <div class="card-body">
+            <h5 class="card-title mint-question text-center">
+              Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}
+            </h5>
+            <div class="mb-3 text-center">{{ questions[currentQuestionIndex].text }}</div>
+            <div class="btn-group-vertical w-100">
+              <button
+                v-for="option in questions[currentQuestionIndex].options"
+                :key="option"
+                class="btn btn-outline-primary mb-2 d-flex align-items-center justify-content-center"
+                :class="{
+                  active: questions[currentQuestionIndex].selected === option,
+                }"
+                @click="selectOption(currentQuestionIndex, option)"
+              >
+                <i
+                  v-if="questions[currentQuestionIndex].selected === option"
+                  class="bi bi-check-circle-fill me-2 text-success"
+                ></i>
+                <i v-else class="bi bi-circle me-2"></i>
+                {{ option }}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </transition>
 
       <div class="mt-4 d-flex justify-content-center gap-2">
         <button
@@ -126,6 +129,102 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Slide in transition for question box */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.slide-fade-enter-from {
+  opacity: 0;
+  transform: translateX(60px);
+}
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.btn-outline-primary {
+  border: 2px solid #26c6da;
+  color: #26c6da;
+  background: #fff;
+}
+
+.btn-outline-primary.active,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+  background: #26c6da;
+  color: #fff;
+  border-color: #26c6da;
+  box-shadow: 0 0 0 0.2rem rgba(38, 198, 218, 0.15);
+}
+
+.btn-outline-primary:hover {
+  background: #b2ebf2;
+  color: #006064;
+  border-color: #26c6da;
+}
+
+.btn-secondary {
+  background: #b2dfdb;
+  color: #00695c;
+  border: none;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: #26a69a;
+  color: #fff;
+}
+
+.btn-warning {
+  background: #fffde7;
+  color: #fbc02d;
+  border: none;
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+  background: #ffe082;
+  color: #fff;
+}
+
+.btn-success {
+  background: #a5d6a7;
+  color: #1b5e20;
+  border: none;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background: #43a047;
+  color: #fff;
+}
+
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f5f5f5 !important;
+  color: #bdbdbd !important;
+  border-color: #e0e0e0 !important;
+}
+</style>
 
 <script>
 import { useUserStore } from '../stores/user'
