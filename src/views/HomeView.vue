@@ -24,13 +24,14 @@
         </div>
         <button
           type="submit"
-          class="btn mint-action w-100"
+          class="btn mint-action btn-sm w-100"
           style="
             background: #009688;
             color: #fff;
             font-weight: 600;
             border-radius: 10px;
-            padding: 10px 0;
+            padding: 5px 0;
+            font-size: 0.9rem;
           "
         >
           Start Quiz
